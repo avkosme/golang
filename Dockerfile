@@ -10,4 +10,4 @@ RUN wget -c http://mirror.linux-ia64.org/gnu/gcc/releases/gcc-8.2.0/gcc-8.2.0.ta
 RUN cd /tmp && unxz gcc-8.2.0.tar.xz && tar -xvvf gcc-8.2.0.tar
 RUN cd /tmp/gcc-8.2.0/ && ./contrib/download_prerequisites && \
 ./configure --prefix=/opt/gcc-8.2.0 --disable-multilib --enable-languages=c,c++,go && \
-make && make install
+make -j8 && make install
